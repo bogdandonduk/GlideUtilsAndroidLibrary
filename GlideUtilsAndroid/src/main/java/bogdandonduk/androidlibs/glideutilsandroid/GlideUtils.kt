@@ -6,13 +6,13 @@ import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.lang.ref.WeakReference
 
-class GlideUtils(context: Context) {
+class GlideUtils private constructor(context: Context) {
     var contextWR: WeakReference<Context> = WeakReference(context)
 
     companion object {
         private var instance: GlideUtils? = null
 
-        private fun getInstance(context: Context, override: Boolean = false) : GlideUtils {
+        fun getInstance(context: Context, override: Boolean = false) : GlideUtils {
             if(override || instance == null)
                 instance = GlideUtils(context)
 
