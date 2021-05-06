@@ -1,0 +1,3 @@
+rootProject.name = "GlideUtilsAndroidLibrary"
+include ':app'
+include ':GlideUtilsAndroid'
