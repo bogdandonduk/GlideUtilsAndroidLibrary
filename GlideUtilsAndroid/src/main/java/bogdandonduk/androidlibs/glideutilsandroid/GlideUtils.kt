@@ -28,6 +28,22 @@ class GlideUtils private constructor(context: Context) {
             .priority(Priority.HIGH)
             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
 
+    val drawableRequestBuilder = Glide.with(contextWR.get()!!)
+            .asDrawable()
+            .placeholder(R.drawable.placeholder_image)
+            .error(R.drawable.placeholder_image_error)
+            .thumbnail(0.5f)
+            .priority(Priority.HIGH)
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+
+    val fileRequestBuilder = Glide.with(contextWR.get()!!)
+            .asFile()
+            .placeholder(R.drawable.placeholder_image)
+            .error(R.drawable.placeholder_image_error)
+            .thumbnail(0.5f)
+            .priority(Priority.HIGH)
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+
     val gifRequestBuilder = Glide.with(contextWR.get()!!)
         .asGif()
         .placeholder(R.drawable.placeholder_image)
